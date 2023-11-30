@@ -76,13 +76,18 @@ $endfor$
 %-------------------------------------------------------------------------------
 \cvsection{Key Qualifications}
 \begin{cventries}
-\cventry{}{}{}{}{
-  \begin{cvitems}
-  $for(qualification)$
-      \item{$qualification$}
+\cventry
+  {} 
+  {} 
+  {} 
+  {}
+  {
+    \begin{cvitems} 
+      $for(qualification)$
+    \item{$qualification$}
       $endfor$
-  \end{cvitems}
-}
+    \end{cvitems}
+  }
 \end{cventries}
 %-------------------------------------------------------------------------------
 %	Experiences
@@ -104,10 +109,38 @@ $for(experience)$
         $endfor$
       \end{cvitems}
     }
-    \linebreak
+
 $endfor$
 \end{cventries}
 
+%-------------------------------------------------------------------------------
+%	Other Skills
+%-------------------------------------------------------------------------------
+$if(skill)$
+\cvsection{Other Skills}
+\begin{cventries}
+
+%---------------------------------------------------------
+  
+  \cventry
+    {} 
+    {} 
+    {} 
+    {}
+    {
+      \begin{cvitems} 
+        $for(skill)$
+        $for(skill.items)$
+        \item{$if(skill.name)$[$skill.name$]$endif$ $skill.items$}
+        $endfor$
+        $endfor$
+      \end{cvitems}
+    }
+
+
+\end{cventries}
+
+$endif$
 %-------------------------------------------------------------------------------
 %	Projects
 %-------------------------------------------------------------------------------
